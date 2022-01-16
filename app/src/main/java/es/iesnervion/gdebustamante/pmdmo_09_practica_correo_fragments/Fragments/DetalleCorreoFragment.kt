@@ -10,6 +10,7 @@ import androidx.fragment.app.activityViewModels
 import es.iesnervion.gdebustamante.pmdmo_09_practica_correo_fragments.Entidades.Correo
 import es.iesnervion.gdebustamante.pmdmo_09_practica_correo_fragments.R
 import es.iesnervion.gdebustamante.pmdmo_09_practica_correo_fragments.ViewModels.MainActivityVM
+import es.iesnervion.gdebustamante.pmdmo_09_practica_correo_fragments.databinding.FragmentDetalleCorreoBinding
 import org.w3c.dom.Text
 
 /**
@@ -18,10 +19,12 @@ import org.w3c.dom.Text
  * create an instance of this fragment.
  */
 class DetalleCorreoFragment : Fragment() {
-
+    //ViewModel
     private val viewModel: MainActivityVM by activityViewModels()
+    //ViewBinding
+    private var _binding : FragmentDetalleCorreoBinding? = null
+    private val binding get() = _binding!!
 
-    private lateinit var tvDetalle: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,11 +36,9 @@ class DetalleCorreoFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_detalle_correo, container, false)
-        tvDetalle = view.findViewById(R.id.tvDetalleCorreo)
+        _binding = FragmentDetalleCorreoBinding.inflate(inflater, container, false)
 
-        return view
+        return binding.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {//TODO MEJORAR
@@ -47,7 +48,7 @@ class DetalleCorreoFragment : Fragment() {
     }
 
     private fun onCorreoChanged(correo: Correo) {
-        tvDetalle.text = correo.texto
+        binding.tvDetalleCorreo.text = correo.texto
     }
 
     companion object {

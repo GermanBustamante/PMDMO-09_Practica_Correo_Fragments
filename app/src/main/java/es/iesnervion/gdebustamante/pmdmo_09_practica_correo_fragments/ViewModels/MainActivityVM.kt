@@ -2,11 +2,11 @@ package es.iesnervion.gdebustamante.pmdmo_09_practica_correo_fragments.ViewModel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import es.iesnervion.gdebustamante.pmdmo_09_practica_correo_fragments.Entidades.Correo
+import es.iesnervion.gdebustamante.pmdmo_09_practica_correo_fragments.Entidades.Contacto
 
 class MainActivityVM : ViewModel() {
 
-    val correoSelected = MutableLiveData<Correo>()
+    val contactoSelected = MutableLiveData<Contacto>()
     val visualizacion = MutableLiveData<String>()
 
 }

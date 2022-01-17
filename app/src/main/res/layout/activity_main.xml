@@ -4,7 +4,7 @@
     android:layout_height="match_parent">
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/frgCVMovil"
-        android:name="es.iesnervion.gdebustamante.pmdmo_09_practica_correo_fragments.Fragments.ListaCorreosFragment"
+        android:name="es.iesnervion.gdebustamante.pmdmo_09_practica_correo_fragments.Fragments.ListaContactosFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </LinearLayout>

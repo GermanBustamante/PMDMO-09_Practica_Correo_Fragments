@@ -5,24 +5,21 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.activityViewModels
-import es.iesnervion.gdebustamante.pmdmo_09_practica_correo_fragments.Entidades.Correo
-import es.iesnervion.gdebustamante.pmdmo_09_practica_correo_fragments.R
+import es.iesnervion.gdebustamante.pmdmo_09_practica_correo_fragments.Entidades.Contacto
 import es.iesnervion.gdebustamante.pmdmo_09_practica_correo_fragments.ViewModels.MainActivityVM
-import es.iesnervion.gdebustamante.pmdmo_09_practica_correo_fragments.databinding.FragmentDetalleCorreoBinding
-import org.w3c.dom.Text
+import es.iesnervion.gdebustamante.pmdmo_09_practica_correo_fragments.databinding.FragmentDetalleContactoBinding
 
 /**
  * A simple [Fragment] subclass.
- * Use the [DetalleCorreoFragment.newInstance] factory method to
+ * Use the [DetalleContactoFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class DetalleCorreoFragment : Fragment() {
+class DetalleContactoFragment : Fragment() {
     //ViewModel
     private val viewModel: MainActivityVM by activityViewModels()
     //ViewBinding
-    private var _binding : FragmentDetalleCorreoBinding? = null
+    private var _binding : FragmentDetalleContactoBinding? = null
     private val binding get() = _binding!!
 
 
@@ -36,7 +33,7 @@ class DetalleCorreoFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentDetalleCorreoBinding.inflate(inflater, container, false)
+        _binding = FragmentDetalleContactoBinding.inflate(inflater, container, false)
 
         return binding.root
     }
@@ -44,11 +41,15 @@ class DetalleCorreoFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {//TODO MEJORAR
         super.onActivityCreated(savedInstanceState)
 //        tvDetalle.text = viewModel.correoSelected.value?.texto
-        viewModel.correoSelected.observe(this, this::onCorreoChanged)
+        viewModel.contactoSelected.observe(this, this::onCorreoChanged)
     }
 
-    private fun onCorreoChanged(correo: Correo) {
-        binding.tvDetalleCorreo.text = correo.texto
+    private fun onCorreoChanged(contacto: Contacto) {
+        binding.tvNombreVM.text = contacto.nombre
+        binding.tvApellidosVM.text = contacto.apellidos
+        binding.tvDireccionVM.text = contacto.direccion
+        binding.tvTelefonoVM.text = contacto.telefono
+
     }
 
     companion object {
@@ -63,7 +64,7 @@ class DetalleCorreoFragment : Fragment() {
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(/*: String, param2: String*/) =
-            DetalleCorreoFragment().apply {
+            DetalleContactoFragment().apply {
                 arguments = Bundle().apply {
                 }
             }

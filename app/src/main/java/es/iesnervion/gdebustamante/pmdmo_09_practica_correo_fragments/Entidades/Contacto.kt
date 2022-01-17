@@ -7,4 +7,4 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-data class Correo(val de: String, val asunto: String, val texto: String)
+data class Contacto(val nombre: String, val apellidos: String, val telefono: String, val direccion : String)

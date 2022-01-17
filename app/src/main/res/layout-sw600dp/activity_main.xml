@@ -8,12 +8,12 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="0.3"
-        android:name="es.iesnervion.gdebustamante.pmdmo_09_practica_correo_fragments.Fragments.ListaCorreosFragment"/>
+        android:name="es.iesnervion.gdebustamante.pmdmo_09_practica_correo_fragments.Fragments.ListaContactosFragment"/>
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragCVdchaT"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="0.7"
-        android:name="es.iesnervion.gdebustamante.pmdmo_09_practica_correo_fragments.Fragments.DetalleCorreoFragment"/>
+        android:name="es.iesnervion.gdebustamante.pmdmo_09_practica_correo_fragments.Fragments.DetalleContactoFragment"/>
 </LinearLayout>

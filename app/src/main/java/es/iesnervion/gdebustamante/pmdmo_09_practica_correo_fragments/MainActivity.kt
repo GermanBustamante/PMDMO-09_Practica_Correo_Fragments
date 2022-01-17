@@ -2,11 +2,9 @@ package es.iesnervion.gdebustamante.pmdmo_09_practica_correo_fragments
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.TextUtils.replace
-import android.widget.TextView
 import androidx.activity.viewModels
 import androidx.fragment.app.*
-import es.iesnervion.gdebustamante.pmdmo_09_practica_correo_fragments.Fragments.DetalleCorreoFragment
+import es.iesnervion.gdebustamante.pmdmo_09_practica_correo_fragments.Fragments.DetalleContactoFragment
 import es.iesnervion.gdebustamante.pmdmo_09_practica_correo_fragments.ViewModels.MainActivityVM
 
 class MainActivity : AppCompatActivity() {
@@ -27,7 +25,7 @@ class MainActivity : AppCompatActivity() {
     private fun onVisualizacionChanged(visualizacion : String) {
         if (smallScreen) {
             supportFragmentManager.beginTransaction().apply{
-                replace(R.id.frgCVMovil, DetalleCorreoFragment.newInstance())
+                replace(R.id.frgCVMovil, DetalleContactoFragment.newInstance())
                 setReorderingAllowed(true)
                 addToBackStack(null)
                 commit()

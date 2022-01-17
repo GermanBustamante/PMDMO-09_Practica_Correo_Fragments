@@ -3,12 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.ListaCorreosFragment">
+    tools:context=".Fragments.ListaContactosFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcVw"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/list_item_correo"/>
+        tools:listitem="@layout/list_item_contacto"/>
 
 </FrameLayout>

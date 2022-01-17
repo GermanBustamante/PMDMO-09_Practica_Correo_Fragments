@@ -38,18 +38,16 @@ class DetalleContactoFragment : Fragment() {
         return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {//TODO MEJORAR
-        super.onActivityCreated(savedInstanceState)
-//        tvDetalle.text = viewModel.correoSelected.value?.texto
-        viewModel.contactoSelected.observe(this, this::onCorreoChanged)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        viewModel.contactoSelected.observe(this, this::onContactoChanged)
     }
 
-    private fun onCorreoChanged(contacto: Contacto) {
+    private fun onContactoChanged(contacto: Contacto) {
         binding.tvNombreVM.text = contacto.nombre
         binding.tvApellidosVM.text = contacto.apellidos
         binding.tvDireccionVM.text = contacto.direccion
         binding.tvTelefonoVM.text = contacto.telefono
-
     }
 
     companion object {

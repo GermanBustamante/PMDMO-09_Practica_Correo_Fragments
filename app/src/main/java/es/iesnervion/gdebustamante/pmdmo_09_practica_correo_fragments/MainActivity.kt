@@ -30,8 +30,6 @@ class MainActivity : AppCompatActivity() {
                 addToBackStack(null)
                 commit()
             }
-        }else{
-//            val fragment = supportFragmentManager.findFragmentById(R.id.frgCVMovil) as DetalleCorreoFragment
         }
     }
 }

@@ -22,7 +22,5 @@ F
 app/proguard-rules.pro,9\e\9e08934d811afe28fbc77aaa3c0d747b94348db9
 “
 capp/src/test/java/es/iesnervion/gdebustamante/pmdmo_09_practica_correo_fragments/ExampleUnitTest.kt,4\2\42dff1c1150e511f78ce1605d9dcc4b557fe6032
-<
-build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
-@
-app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
+
+mapp/src/main/java/es/iesnervion/gdebustamante/pmdmo_09_practica_correo_fragments/ViewModels/MainActivityVM.kt,f\9\f93cb1ebbc58b091fd945a64d6ea7e3281987ace

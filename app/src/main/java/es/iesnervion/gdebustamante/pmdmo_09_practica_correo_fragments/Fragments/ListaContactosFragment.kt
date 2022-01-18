@@ -39,13 +39,17 @@ class ListaContactosFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentListaContactosBinding.inflate(inflater, container, false)
+
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         //Aquí inicializamos lo referente a la interfaz
         binding.rcVw.apply {
             layoutManager = LinearLayoutManager(view?.context)
             adapter = ContactoAdapter(datos) { onContactoSelected(it) }
         }
-
-        return binding.root
     }
 
     private fun onContactoSelected(contacto: Contacto){

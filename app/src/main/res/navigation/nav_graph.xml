@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/listaContactosFragment">
+
+    <fragment
+        android:id="@+id/listaContactosFragment"
+        android:name="es.iesnervion.gdebustamante.pmdmo_09_practica_correo_fragments.Fragments.ListaContactosFragment"
+        android:label="fragment_lista_contactos"
+        tools:layout="@layout/fragment_lista_contactos" >
+        <action
+            android:id="@+id/action_listaContactosFragment_to_detalleContactoFragment"
+            app:destination="@id/detalleContactoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detalleContactoFragment"
+        android:name="es.iesnervion.gdebustamante.pmdmo_09_practica_correo_fragments.Fragments.DetalleContactoFragment"
+        android:label="fragment_detalle_contacto"
+        tools:layout="@layout/fragment_detalle_contacto" />
+</navigation>

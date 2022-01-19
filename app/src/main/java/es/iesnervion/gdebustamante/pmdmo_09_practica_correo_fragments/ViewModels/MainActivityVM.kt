@@ -7,7 +7,5 @@ import es.iesnervion.gdebustamante.pmdmo_09_practica_correo_fragments.Entidades.
 class MainActivityVM : ViewModel() {
 
     val contactoSelected = MutableLiveData<Contacto>()
-    //ENUM
-    val visualizacion = MutableLiveData<String>()
 
 }

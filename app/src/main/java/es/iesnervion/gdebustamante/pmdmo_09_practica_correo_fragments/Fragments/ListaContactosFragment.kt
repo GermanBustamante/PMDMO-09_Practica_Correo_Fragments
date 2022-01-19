@@ -6,6 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import es.iesnervion.gdebustamante.pmdmo_09_practica_correo_fragments.Entidades.Contacto
 import es.iesnervion.gdebustamante.pmdmo_09_practica_correo_fragments.R
@@ -21,14 +24,18 @@ import es.iesnervion.gdebustamante.pmdmo_09_pruebas_fragments.Adapters.ContactoA
  */
 class ListaContactosFragment : Fragment() {
     //ViewModel
-    private val viewModel : MainActivityVM by activityViewModels()
+    private val viewModel: MainActivityVM by activityViewModels()
+
     //Binding
-    private var _binding : FragmentListaContactosBinding? = null
+    private var _binding: FragmentListaContactosBinding? = null
 
     private val binding get() = _binding!!
 
+    //NavController
+    private lateinit var navController: NavController
+
     private val datos =
-        MutableList(20) { i -> Contacto("Contacto $i", "Apellidos $i", "$i", "Calle C/$i")}
+        MutableList(20) { i -> Contacto("Contacto $i", "Apellidos $i", "$i", "Calle C/$i") }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,33 +53,22 @@ class ListaContactosFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         //Aquí inicializamos lo referente a la interfaz
+        navController = findNavController()
+
         binding.rcVw.apply {
             layoutManager = LinearLayoutManager(view?.context)
             adapter = ContactoAdapter(datos) { onContactoSelected(it) }
         }
     }
 
-    private fun onContactoSelected(contacto: Contacto){
-        //Actualizamos el frg llamando al observer del viewModel
-        viewModel.visualizacion.postValue(getString(R.string.VISUALIZACION_DETALLE))
+    private fun onContactoSelected(contacto: Contacto) {
         viewModel.contactoSelected.postValue(contacto)//Podria pasarle el String pero es más correcto
-    }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ListaCorreosFragment.
-         */
-        @JvmStatic
-        fun newInstance() =
-            ListaContactosFragment().apply {
-                arguments = Bundle().apply {
-                    //Aquí irian los parámetros que quisiera meter
-                }
-            }
+        val action = ListaContactosFragmentDirections.actionListaContactosFragmentToDetalleContactoFragment("German")
+        //TODO 2 FORMAS DE NAVEGAR ENTRE FRAGMENTS
+        navController.navigate(R.id.action_listaContactosFragment_to_detalleContactoFragment)
+        //Puedes usar un with para usar popBackStack() o popBackStackChetao()
+        //O DICIENDO
+//        Navigation.createNavigateOnClickListener(R.id.action_listaContactosFragment_to_detalleContactoFragment)//TODO NO FUNCIONA HAY QUE VER PQ
     }
 }

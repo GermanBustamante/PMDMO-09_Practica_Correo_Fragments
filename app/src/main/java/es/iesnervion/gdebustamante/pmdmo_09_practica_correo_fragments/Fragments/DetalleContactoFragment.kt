@@ -1,6 +1,7 @@
 package es.iesnervion.gdebustamante.pmdmo_09_practica_correo_fragments.Fragments
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -25,7 +26,11 @@ class DetalleContactoFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
+        //TODO VAMOS A RECOGER EL BUNDLE POR SAFE ARGS
+        val bundle = DetalleContactoFragmentArgs.fromBundle(arguments!!)
+        bundle.apply {
+            var nombre = nombre
+            Log.i("Bundleaso", "El nombre recogido del bundle es $nombre")
         }
     }
 
@@ -34,7 +39,6 @@ class DetalleContactoFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentDetalleContactoBinding.inflate(inflater, container, false)
-
         return binding.root
     }
 
@@ -48,23 +52,5 @@ class DetalleContactoFragment : Fragment() {
         binding.tvApellidosVM.text = contacto.apellidos
         binding.tvDireccionVM.text = contacto.direccion
         binding.tvTelefonoVM.text = contacto.telefono
-    }
-
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment DetalleCorreoFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(/*: String, param2: String*/) =
-            DetalleContactoFragment().apply {
-                arguments = Bundle().apply {
-                }
-            }
     }
 }

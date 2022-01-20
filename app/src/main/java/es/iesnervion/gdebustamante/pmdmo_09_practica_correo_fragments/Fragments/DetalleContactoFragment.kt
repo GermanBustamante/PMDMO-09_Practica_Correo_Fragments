@@ -27,11 +27,11 @@ class DetalleContactoFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //TODO VAMOS A RECOGER EL BUNDLE POR SAFE ARGS
-        val bundle = DetalleContactoFragmentArgs.fromBundle(arguments!!)
-        bundle.apply {
-            var nombre = nombre
-            Log.i("Bundleaso", "El nombre recogido del bundle es $nombre")
-        }
+//        val bundle = DetalleContactoFragmentArgs.fromBundle(arguments!!)
+//        bundle.apply {
+//            var nombre = nombre
+//            Log.i("Bundleaso", "El nombre recogido del bundle es $nombre")
+//        }
     }
 
     override fun onCreateView(

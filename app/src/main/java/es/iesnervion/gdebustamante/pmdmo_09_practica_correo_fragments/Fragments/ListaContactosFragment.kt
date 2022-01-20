@@ -64,7 +64,7 @@ class ListaContactosFragment : Fragment() {
     private fun onContactoSelected(contacto: Contacto) {
         viewModel.contactoSelected.postValue(contacto)//Podria pasarle el String pero es más correcto
 
-        val action = ListaContactosFragmentDirections.actionListaContactosFragmentToDetalleContactoFragment("German")
+//        val action = ListaContactosFragmentDirections.actionListaContactosFragmentToDetalleContactoFragment("German")
         //TODO 2 FORMAS DE NAVEGAR ENTRE FRAGMENTS
         navController.navigate(R.id.action_listaContactosFragment_to_detalleContactoFragment)
         //Puedes usar un with para usar popBackStack() o popBackStackChetao()

@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/gdebustamante/AndroidStudioProjects/PMDMO-09_Practica_Correo_Fragments/app/src/main/res/layout-sw600dp/activity_main.xml" value="0.2103825136612022" />
+        <entry key="..\:/Users/gdebustamante/AndroidStudioProjects/PMDMO-09_Practica_Correo_Fragments/app/src/main/res/layout/activity_main.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/gdebustamante/AndroidStudioProjects/PMDMO-09_Practica_Correo_Fragments/app/src/main/res/layout/fragment_lista_contactos.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/gdebustamante/AndroidStudioProjects/PMDMO-09_Practica_Correo_Fragments/app/src/main/res/layout/list_item_contacto.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/germa/AndroidStudioProjects/PMDMO_09/app/src/main/res/drawable/ic_supervised_user_circle.xml" value="0.26614583333333336" />
         <entry key="..\:/Users/germa/AndroidStudioProjects/PMDMO_09/app/src/main/res/layout-sw600dp/activity_main.xml" value="0.1875" />
         <entry key="..\:/Users/germa/AndroidStudioProjects/PMDMO_09/app/src/main/res/layout/activity_main.xml" value="0.2359375" />

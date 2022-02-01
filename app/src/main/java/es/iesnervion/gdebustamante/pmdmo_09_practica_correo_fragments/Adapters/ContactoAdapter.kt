@@ -8,7 +8,10 @@ import es.iesnervion.gdebustamante.pmdmo_09_practica_correo_fragments.Entidades.
 import es.iesnervion.gdebustamante.pmdmo_09_practica_correo_fragments.R
 import es.iesnervion.gdebustamante.pmdmo_09_practica_correo_fragments.databinding.ListItemContactoBinding
 
-class ContactoAdapter(private val correosList: MutableList<Contacto>, private val listener: (Contacto)-> Unit) :
+class ContactoAdapter(
+    private val correosList: MutableList<Contacto>,
+    private val listener: (Contacto) -> Unit
+) :
     RecyclerView.Adapter<ContactoAdapter.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -29,7 +32,7 @@ class ContactoAdapter(private val correosList: MutableList<Contacto>, private va
         with(holder) {
             binding.tvDe.text = correo.nombre
             binding.tvAsunto.text = correo.apellidos
-            itemView.setOnClickListener{listener(correo)}
+            itemView.setOnClickListener { listener(correo) }
         }
     }
 
